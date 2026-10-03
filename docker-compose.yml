@@ -1,0 +1,35 @@
+# Deploy behind an EXISTING Traefik reverse proxy (e.g. the one already on your VPS).
+# Traefik gives the app your domain name and a free HTTPS certificate (Let's Encrypt).
+#
+# All ${...} values come from the .env file in this folder - see DEPLOY.md.
+#   docker compose up -d --build
+
+services:
+  sellerpolicy:
+    build:
+      context: .
+      args:
+        EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-sentence-transformers}
+    image: sellerpolicy-assistant:latest
+    container_name: sellerpolicy
+    restart: unless-stopped
+    env_file: .env
+    # No "ports:" on purpose - the app is only reachable through Traefik (HTTPS),
+    # never directly on http://IP:8501.
+    expose:
+      - "8501"
+    networks:
+      - proxy
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=${TRAEFIK_NETWORK:?Set TRAEFIK_NETWORK in .env}
+      - traefik.http.routers.sellerpolicy.rule=Host(`${APP_DOMAIN:?Set APP_DOMAIN in .env}`)
+      - traefik.http.routers.sellerpolicy.entrypoints=${TRAEFIK_ENTRYPOINT:-websecure}
+      - traefik.http.routers.sellerpolicy.tls=true
+      - traefik.http.routers.sellerpolicy.tls.certresolver=${TRAEFIK_CERTRESOLVER:-mytlschallenge}
+      - traefik.http.services.sellerpolicy.loadbalancer.server.port=8501
+
+networks:
+  proxy:
+    external: true
+    name: ${TRAEFIK_NETWORK}
