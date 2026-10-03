@@ -1,0 +1,18 @@
+[
+  {"id": "q01", "style": "keyword", "question": "How many days does a seller have to appeal an account deactivation?", "expected_doc_id": "account_health_odr", "section_keyword": "Appeal timelines"},
+  {"id": "q02", "style": "keyword", "question": "What ODR percentage must sellers stay under?", "expected_doc_id": "account_health_odr", "section_keyword": "Target"},
+  {"id": "q03", "style": "keyword", "question": "What are the three parts of a good Plan of Action?", "expected_doc_id": "account_health_odr", "section_keyword": "Plan of Action"},
+  {"id": "q04", "style": "paraphrase", "question": "The customer says the parcel never showed up. When can they open a guarantee claim against me?", "expected_doc_id": "a_to_z_claims", "section_keyword": "Eligibility"},
+  {"id": "q05", "style": "keyword", "question": "How long does the seller have to respond to an A-to-z claim notification?", "expected_doc_id": "a_to_z_claims", "section_keyword": "Response window"},
+  {"id": "q06", "style": "paraphrase", "question": "Does a claim caused by the carrier losing the package hurt my defect rate?", "expected_doc_id": "a_to_z_claims", "section_keyword": "Order Defect Rate"},
+  {"id": "q07", "style": "paraphrase", "question": "Can I keep part of the money if the buyer sends back something they already used?", "expected_doc_id": "returns_refunds", "section_keyword": "Restocking"},
+  {"id": "q08", "style": "keyword", "question": "What is the deadline to file a SAFE-T claim?", "expected_doc_id": "returns_refunds", "section_keyword": "Common seller questions"},
+  {"id": "q09", "style": "keyword", "question": "Within how many business days must a refund be issued after the return is received?", "expected_doc_id": "returns_refunds", "section_keyword": "Standard refunds"},
+  {"id": "q10", "style": "paraphrase", "question": "The warehouse lost some of my units and I was never paid for them. How long do I have to ask?", "expected_doc_id": "fba_inventory_reimbursement", "section_keyword": "Deadlines"},
+  {"id": "q11", "style": "keyword", "question": "What proof of ownership is needed for an FBA reimbursement claim?", "expected_doc_id": "fba_inventory_reimbursement", "section_keyword": "Evidence"},
+  {"id": "q12", "style": "paraphrase", "question": "Why can't my product be found in search even though it still exists in my inventory?", "expected_doc_id": "listings_restricted_products", "section_keyword": "Suppressed"},
+  {"id": "q13", "style": "keyword", "question": "How do I get approval to sell jewellery in a gated category?", "expected_doc_id": "listings_restricted_products", "section_keyword": "Gated"},
+  {"id": "q14", "style": "paraphrase", "question": "Why is some of my balance being held back instead of paid out?", "expected_doc_id": "payments_disbursements", "section_keyword": "reserve"},
+  {"id": "q15", "style": "keyword", "question": "How many business days does a bank transfer take after a disbursement?", "expected_doc_id": "payments_disbursements", "section_keyword": "Bank transfer"},
+  {"id": "q16", "style": "paraphrase", "question": "When should an associate send the case to another team instead of answering?", "expected_doc_id": "email_response_sop", "section_keyword": "Escalation"}
+]
