@@ -1,0 +1,6 @@
+# Used by docker-compose.caddy.yml. Caddy reads APP_DOMAIN from the environment,
+# gets a Let's Encrypt certificate for it, and forwards traffic (incl. websockets) to Streamlit.
+{$APP_DOMAIN} {
+	encode gzip
+	reverse_proxy sellerpolicy:8501
+}
